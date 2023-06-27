@@ -7,7 +7,16 @@ export function buildLoaders(): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
+    const vueLoader = {
+        test: /\.vue$/i,
+        exclude: /(node_modules)/,
+        use: {
+          loader: "vue-loader",
+        },
+      }
+
     return [
-        typescriptLoader
+        typescriptLoader,
+        vueLoader
     ]
 }
