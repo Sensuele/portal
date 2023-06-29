@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { useTheme } from './hooks/useTheme';
-import { classNames } from './helpers/classNames';
+import { classNames } from 'helpers/classNames';
+import { useTheme } from 'shared/config/theme/useTheme'
 
 const { theme, toggleTheme} = useTheme();
 </script>

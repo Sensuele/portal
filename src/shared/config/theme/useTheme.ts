@@ -1,6 +1,6 @@
+import { Theme } from 'types';
 import { ref } from 'vue';
 
-import { Theme } from '../types/index';
 
 export function useTheme() {
     const LOCAL_STORAGE_THEME_KEY = 'theme';
