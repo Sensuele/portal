@@ -1,8 +1,7 @@
 <template>
     <div :class="[classNames('app', {}, [theme])]">
         <navbar />
-        
-        <button @click="toggleTheme">{{ theme }}</button>
+        <theme-switcher @toggle-theme="toggleTheme" :theme="theme" />
         <router-view />
     </div>
 </template>
@@ -11,7 +10,8 @@
 import { classNames } from 'shared/lib/classNames';
 import { useTheme } from 'shared/config/theme/useTheme'
 import Navbar from 'widgets/Navbar';
-const { theme, toggleTheme} = useTheme();
+import ThemeSwitcher from 'widgets/ThemeSwitcher';
+const { theme, toggleTheme } = useTheme();
 </script>
 <style lang="scss">
 
