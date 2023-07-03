@@ -20,7 +20,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         },
     }
 
-    const cssLoader =  {
+    const cssLoader = {
       test: /\.s[ac]ss$/i,
       use: [
         // Creates `style` nodes from JS strings
@@ -32,9 +32,27 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       ],
     }
 
+    const svgLoader = {
+      test: /\.svg$/,
+      use: [
+        'vue-svg-loader',
+      ],
+    }
+
+    const fileLoader = {
+      test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+    }
+
     return [
         typescriptLoader,
         vueLoader,
-        cssLoader
+        cssLoader,
+        fileLoader,
+        svgLoader
     ]
 }

@@ -1,5 +1,7 @@
 <template>
     <div :class="classNames('navbar', {}, [className ?? '' ])">
+        <theme-switcher @toggle-theme="emits('toggleTheme')" :theme="theme" />
+
         <ul>
             <li v-for="route in routes" :key="route.name">
                 <app-link :to="route.path">{{ route.name }}</app-link>
@@ -9,15 +11,23 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 import { classNames } from 'shared/lib/classNames';
 import { routes } from 'shared/config/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink.vue';
+import ThemeSwitcher from 'widgets/ThemeSwitcher';
+import { useTheme } from 'shared/config/theme/useTheme';
 
 interface Props {
     className?: string;
+    theme: string
+}
+
+interface Emits {
+  (e: 'toggleTheme'): void;
 }
 const props = defineProps<Props>();
+const emits = defineEmits<Emits>();
 </script>
 
 <style lang="scss" scoped>
@@ -28,7 +38,7 @@ const props = defineProps<Props>();
         padding: 20px;
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: space-between;
 
         ul {
             padding: 0;
