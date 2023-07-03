@@ -1,7 +1,10 @@
 <template>
     <div :class="[classNames('app', {}, [theme])]">
-        <navbar @toggle-theme="toggleTheme" :theme="theme" />
-        <router-view />
+        <navbar />
+        <div class="content-page">
+            <sidebar @toggle-theme="toggleTheme" :theme="theme" />
+            <router-view class="page-wrapper" />
+        </div>
     </div>
 </template>
 
@@ -9,6 +12,7 @@
 import { classNames } from 'shared/lib/classNames';
 import { useTheme } from 'shared/config/theme/useTheme'
 import Navbar from 'widgets/Navbar';
+import Sidebar from 'widgets/Sidebar';
 const { theme, toggleTheme } = useTheme();
 </script>
 <style lang="scss">
@@ -16,5 +20,13 @@ const { theme, toggleTheme } = useTheme();
         .switcher {
             color: yellow;
         }
+    }
+    .content-page {
+        display: flex;
+    }
+
+    .page-wrapper {
+        flex-grow: 1;
+        padding: 20px;
     }
 </style>

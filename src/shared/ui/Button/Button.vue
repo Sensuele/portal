@@ -11,7 +11,7 @@ import { ButtonHTMLAttributes, defineProps } from 'vue';
 import { ThemeButton } from './types';
 
 interface Props extends Omit<ButtonHTMLAttributes, 'type'> {
-    type: ButtonHTMLAttributes;
+    type?: ButtonHTMLAttributes;
     theme?: ThemeButton,
 }
 const props = defineProps<Props>();
