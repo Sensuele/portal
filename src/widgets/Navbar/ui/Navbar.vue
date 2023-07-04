@@ -1,6 +1,6 @@
 <template>
     <div :class="classNames('navbar', {}, [className ?? '' ])">
-
+        {{ __('Hello') }}
         <ul>
             <li v-for="route in routes" :key="route.name">
                 <app-link :to="route.path">{{ route.name }}</app-link>
@@ -14,11 +14,13 @@ import { defineProps, defineEmits } from 'vue';
 import { classNames } from 'shared/lib/classNames';
 import { routes } from 'shared/config/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink.vue';
+import useTranslate from 'shared/config/i18n/useTranslate'
 
 interface Props {
     className?: string;
 }
 
+const { __ } = useTranslate('Navbar')
 const props = defineProps<Props>();
 </script>
 
