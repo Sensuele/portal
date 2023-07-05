@@ -24,7 +24,5 @@ const emits = defineEmits<Emits>();
 </script>
 
 <style scoped lang="scss">
-  .switcher {
-    
-  }
+
 </style>

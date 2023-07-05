@@ -42,7 +42,7 @@ const props = defineProps<Props>();
         }
 
         a {
-            color: var(--primary-colo);
+            color: var(--primary-color);
             text-decoration: none;
             margin-left: 10px;
         }

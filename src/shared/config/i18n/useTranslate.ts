@@ -1,9 +1,7 @@
-import { inject, onBeforeMount, watch, ref, readonly } from 'vue';
+import { onBeforeMount, watch, ref, readonly } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { loadLocaleMessages, setLangAttribute, SUPPORTED_LOCALES } from './';
 import { ComponentName } from './i18n.types';
-// import { ILogger } from '@/types';
-// import { NamedValue } from '@intlify/core-base';
 
 /**
  *

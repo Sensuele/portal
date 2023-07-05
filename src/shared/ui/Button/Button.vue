@@ -28,5 +28,6 @@ const props = defineProps<Props>();
     border: 0;
     background: none;
     outline: none;
+    color: var(--primary-color);
 }
 </style>
