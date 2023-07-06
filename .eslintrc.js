@@ -7,26 +7,14 @@ module.exports = {
         'eslint:recommended',
         "plugin:vue/vue3-essential",
         '@vue/typescript/recommended',
-        'plugin:prettier/recommended',
-    ],
-    "overrides": [
-        {
-            "env": {
-                "node": true
-            },
-            "files": [
-                ".eslintrc.{js,cjs}"
-            ],
-            "parserOptions": {
-                "sourceType": "script"
-            }
-        }
+        // 'plugin:prettier/recommended',
     ],
     parserOptions: {
         ecmaVersion: 2020
     },
     "plugins": [
-        "vue"
+        "vue",
+        'prettier'
     ],
     "rules": {
         'prettier/prettier': [
@@ -39,6 +27,7 @@ module.exports = {
             }
         ],
         '@typescript-eslint/no-empty-interface': 'off',
+        'vue/multi-word-component-names': 'off',
     },
     overrides: [
         {

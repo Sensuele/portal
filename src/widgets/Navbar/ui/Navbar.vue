@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits } from 'vue';
+import { defineProps } from 'vue';
 import { classNames } from 'shared/lib/classNames';
 import { routes } from 'shared/config/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink.vue';
