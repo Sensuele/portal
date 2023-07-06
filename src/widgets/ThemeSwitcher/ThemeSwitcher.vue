@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps } from 'vue';
-import Icon from 'shared/assets/icon/Icon.vue';
+import Icon from 'shared/assets/Icon/Icon.vue';
 import Btn from 'shared/ui/Button/Button.vue'
 import { ThemeButton } from 'shared/ui/Button/types';
 
