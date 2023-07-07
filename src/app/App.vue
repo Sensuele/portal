@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { classNames } from 'shared/lib/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/config/theme/useTheme'
 import Navbar from 'widgets/Navbar';
 import Sidebar from 'widgets/Sidebar';
