@@ -3,7 +3,7 @@
         {{ __('Hello') }}
         <ul>
             <li v-for="route in routes" :key="route.name">
-                <app-link :to="route.path">{{ route.name }}</app-link>
+                <app-link :to="route.path">{{ __(route.name as string) }}</app-link>
             </li>
         </ul>
     </div>
