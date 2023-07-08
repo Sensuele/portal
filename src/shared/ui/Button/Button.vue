@@ -1,19 +1,21 @@
 <template>
-    <button :type="type" :class="[theme, 'button']">
-        <span>
-            <slot name="default" />
-        </span>
+    <button :type="props.type" v-bind="$attrs" :class="[theme, 'button']">
+  
+      <span>
+        <slot name="default" />
+      </span>
     </button>
 </template>
 
 <script setup lang="ts">
-import { ButtonHTMLAttributes, defineProps } from 'vue';
+import { defineProps } from 'vue';
 import { ThemeButton } from './types';
 
-interface Props extends Omit<ButtonHTMLAttributes, 'type'> {
-    type?: ButtonHTMLAttributes;
-    theme?: ThemeButton,
+export interface Props {
+  type?: "button" | "submit" | "reset" | undefined;
+  theme?: ThemeButton,
 }
+
 const props = defineProps<Props>();
 
 </script>
