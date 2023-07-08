@@ -1,3 +1,4 @@
 export default {
-    Hello: 'Privet'
+    Home: 'Home',
+    About: 'About'
 }

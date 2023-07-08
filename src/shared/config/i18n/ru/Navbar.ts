@@ -1,3 +1,4 @@
 export default {
-    Hello: 'Привет'
+    Home: 'Главная',
+    About: 'О проекте'
 }

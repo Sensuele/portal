@@ -1,9 +1,11 @@
 <template>
     <div :class="classNames('navbar', {}, [className ?? '' ])">
-        {{ __('Hello') }}
         <ul>
-            <li v-for="route in routes" :key="route.name">
-                <app-link :to="route.path">{{ __(route.name as string) }}</app-link>
+            <li>
+                <app-link :to="'/'">{{ __('Home') }}</app-link>
+            </li>
+            <li>
+                <app-link :to="'/about'">{{ __('About') }}</app-link>
             </li>
         </ul>
     </div>
