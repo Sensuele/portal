@@ -6,6 +6,12 @@ import { ThemeButton } from './types';
 export default {
   title: 'shared/button',
   component: Button,
+  argTypes: {
+    appTheme: {
+      control: 'radio',
+      options: ['dark', 'light']
+    }
+  },
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/vue/configure/story-layout
     layout: 'fullscreen'
@@ -20,13 +26,17 @@ const Template: StoryFn<typeof Button> = (args) => ({
   setup() {
     return { args };
   },
-  template: `<div style="max-width: 460px; margin: 0 auto; padding: 40px 0"><Button v-bind="args" @click="action"><span>Button label</span></Button></div>`
+  template: `<div :class="args.appTheme" class="app" style="margin: 0 auto; padding: 40px 0"><Button v-bind="args" @click="action"><span>Button label</span></Button></div>`
 });
 
-export const Primary = Template.bind({});
+export const Clear = Template.bind({});
+export const Outline = Template.bind({});
 
 
-Primary.args = {
-  type: 'submit',
+Clear.args = {
   theme: ThemeButton.CLEAR
+};
+
+Outline.args = {
+  theme: ThemeButton.OUTLINE
 };

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/vue3';
+import '../src/app/styles/app.scss';
 
 const preview: Preview = {
   parameters: {
@@ -11,5 +12,4 @@ const preview: Preview = {
     }
   }
 };
-
 export default preview;

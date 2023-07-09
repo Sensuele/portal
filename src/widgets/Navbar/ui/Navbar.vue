@@ -14,7 +14,6 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { routes } from 'shared/config/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink.vue';
 import useTranslate from 'shared/config/i18n/useTranslate'
 

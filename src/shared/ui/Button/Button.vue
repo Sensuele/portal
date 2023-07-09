@@ -1,6 +1,5 @@
 <template>
-    <button :type="props.type" v-bind="$attrs" :class="[theme, 'button']">
-  
+    <button v-bind="$attrs" :class="[theme, 'button']">
       <span>
         <slot name="default" />
       </span>
@@ -12,7 +11,6 @@ import { defineProps } from 'vue';
 import { ThemeButton } from './types';
 
 export interface Props {
-  type?: "button" | "submit" | "reset" | undefined;
   theme?: ThemeButton,
 }
 
@@ -31,5 +29,12 @@ const props = defineProps<Props>();
     background: none;
     outline: none;
     color: var(--primary-color);
+}
+.outline {
+  padding: 10px 15px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+  background: none;
 }
 </style>
