@@ -10,7 +10,7 @@ module.exports = {
   webpackFinal: async (config, {
     configType
   }) => {
-    config.resolve.alias['@'] = path.join(__dirname, '..', 'src');
+    config.resolve.modules.push(__dirname, '..', '..', 'src');
     config.module.rules.push({
       test: /\.s[ac]ss$/i,
       use: [
