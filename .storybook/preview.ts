@@ -2,9 +2,20 @@ import type { Preview } from '@storybook/vue3';
 import '../src/app/styles/app.scss';
 import { i18n } from '../src/shared/config/i18n';
 import { setup  } from '@storybook/vue3';
+import { createRouter, createWebHashHistory } from 'vue-router/dist/vue-router';
+import { routes } from '../src/shared/config/routeConfig';
+
+const router = createRouter({
+  history: createWebHashHistory('/iframe.html?id=modules-crm--base#'),
+  routes
+});
+
 setup((app) => {
-  app.use(i18n)
+  app.use(i18n);
+  app.use(router);
 })
+
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },

@@ -1,9 +1,9 @@
-import Sidebar from './Sidebar.vue';
+import Navbar from './Navbar.vue';
 import { action } from '@storybook/addon-actions';
 
 export default {
-  title: 'shared/Sidebar',
-  component: Sidebar,
+  title: 'shared/Navbar',
+  component: Navbar,
   argTypes: {
     appTheme: {
       control: 'radio',
@@ -19,9 +19,8 @@ export default {
 
 const Template = (args: any) => ({
   // Components used in your story `template` are defined in the `components` object
-  components: { Sidebar },
+  components: { Navbar },
   methods: {
-    action: action('changeTheme')
   },
 
   setup() {
@@ -30,7 +29,7 @@ const Template = (args: any) => ({
 
   // Here we define the `template`
   template: `<div :class="args.appTheme"  class="app" style="width: 100vw; height: 100vh;">
-          <sidebar @toggle-theme="action" v-bind="args" />
+          <navbar v-bind="args" />
         </div>`
 });
 
