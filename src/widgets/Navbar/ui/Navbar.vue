@@ -42,10 +42,6 @@ const props = defineProps<Props>();
             align-items: center;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            margin-left: 10px;
-        }
+        
     }
 </style>

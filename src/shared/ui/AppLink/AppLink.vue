@@ -20,6 +20,10 @@ interface Props {
 const props = defineProps<Props>();
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin-left: 10px;
+}
 </style> 
