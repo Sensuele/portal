@@ -1,3 +1,4 @@
+import { StoryFn } from '@storybook/vue3';
 import Navbar from './Navbar.vue';
 import { action } from '@storybook/addon-actions';
 
@@ -16,7 +17,7 @@ export default {
   }
 };
 
-const Template = (args: any) => ({
+const Template: StoryFn<typeof Navbar> = (args: any) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { Navbar },
   methods: {},
@@ -32,6 +33,3 @@ const Template = (args: any) => ({
 });
 
 export const Base = Template.bind({});
-Base.args = {
-  appTheme: 'dark'
-};

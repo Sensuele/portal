@@ -1,7 +1,7 @@
 <template>
   <router-link :to="to" :class="classNames('', {}, [className ?? ''])">
-    <template v-for="(_, slot) in $slots" v-slot:[slot]="scope">
-      <slot :name="slot" v-bind="scope || {}"></slot>
+    <template #default>
+      <slot name="default" />
     </template>
   </router-link>
 </template>

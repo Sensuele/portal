@@ -1,6 +1,8 @@
 <template>
-  <div class="not-found-page">
-    {{ __('Page not found') }}
+  <div>
+    <div :class="'not-found-page'">
+      {{ __('Page not found') }}
+    </div>
   </div>
 </template>
 

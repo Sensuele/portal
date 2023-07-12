@@ -1,10 +1,13 @@
 <template>
-  <div :class="[{ collapsed }, 'sidebar']">
-    <div class="switchers">
-      <theme-switcher @toggle-theme="emits('toggleTheme')" :theme="theme" />
-      <lang-switcher :class="'lang-switcher'" />
+  <div>
+    <div :class="[{ collapsed }, 'sidebar']">
+      <div class="switchers">
+        <theme-switcher @toggle-theme="emits('toggleTheme')" :theme="theme" />
+        <lang-switcher :class="'lang-switcher'" />
+      </div>
     </div>
   </div>
+  
 </template>
 
 <script setup lang="ts">
@@ -13,7 +16,7 @@ import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
 
 interface Props {
-  className?: string;
+  // className?: string;
   theme: string;
 }
 
