@@ -6,8 +6,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
-export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+  const plugins = [
     new HtmlWebpackPlugin({
       template: paths.html
     }),
@@ -21,9 +21,14 @@ export function buildPlugins({ paths }: BuildOptions): webpack.WebpackPluginInst
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
-  ];
+  ]
+
+    if(isDev) {
+      plugins.push(new webpack.HotModuleReplacementPlugin());
+      plugins.push(new BundleAnalyzerPlugin({
+        openAnalyzer: false
+      }))
+    }
+
+  return plugins;
 }
