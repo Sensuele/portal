@@ -7,7 +7,7 @@ export default {
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/vue/configure/story-layout
     layout: 'fullscreen'
-  },
+  }
 };
 
 const Template = (args: any) => ({
@@ -28,4 +28,3 @@ const Template = (args: any) => ({
 });
 
 export const Base = Template.bind({});
-

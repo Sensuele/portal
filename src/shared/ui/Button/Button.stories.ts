@@ -32,7 +32,6 @@ const Template: StoryFn<typeof Button> = (args) => ({
 export const Clear = Template.bind({});
 export const Outline = Template.bind({});
 
-
 Clear.args = {
   theme: ThemeButton.CLEAR
 };

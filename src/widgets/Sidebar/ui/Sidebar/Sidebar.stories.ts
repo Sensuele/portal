@@ -7,14 +7,13 @@ export default {
   argTypes: {
     appTheme: {
       control: 'radio',
-      options: ['dark', 'light'],
-      
+      options: ['dark', 'light']
     }
   },
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/vue/configure/story-layout
     layout: 'fullscreen'
-  },
+  }
 };
 
 const Template = (args: any) => ({
@@ -36,5 +35,5 @@ const Template = (args: any) => ({
 
 export const Base = Template.bind({});
 Base.args = {
-    appTheme: 'dark',
+  appTheme: 'dark'
 };

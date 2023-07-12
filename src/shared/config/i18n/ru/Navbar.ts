@@ -1,4 +1,4 @@
 export default {
-    Home: 'Главная',
-    About: 'О проекте'
-}
+  Home: 'Главная',
+  About: 'О проекте'
+};

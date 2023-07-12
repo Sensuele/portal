@@ -1,3 +1,3 @@
 export default {
-    'Page not found': 'Страница не найдена'
-}
+  'Page not found': 'Страница не найдена'
+};

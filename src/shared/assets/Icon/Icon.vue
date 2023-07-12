@@ -1,5 +1,5 @@
 <template>
-    <component :is="iconName" v-bind="$attrs" />
+  <component :is="iconName" v-bind="$attrs" />
 </template>
 
 <script lang="ts">
@@ -18,5 +18,5 @@ export default {
   props: {
     iconName: String
   }
-}
+};
 </script>

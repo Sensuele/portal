@@ -1,4 +1,4 @@
 export enum ThemeButton {
-    CLEAR = 'clear',
-    OUTLINE= 'outline'
+  CLEAR = 'clear',
+  OUTLINE = 'outline'
 }

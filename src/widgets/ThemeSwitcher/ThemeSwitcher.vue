@@ -1,14 +1,13 @@
 <template>
-    <btn :theme="ThemeButton.CLEAR" :class="'switcher'" @click="emits('toggleTheme')">
-        <icon :icon-name="'IconDark'" />
-    </btn>
-    
+  <btn :theme="ThemeButton.CLEAR" :class="'switcher'" @click="emits('toggleTheme')">
+    <icon :icon-name="'IconDark'" />
+  </btn>
 </template>
 
 <script setup lang="ts">
 import { defineEmits, defineProps } from 'vue';
 import Icon from 'shared/assets/Icon/Icon.vue';
-import Btn from 'shared/ui/Button/Button.vue'
+import Btn from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
 
 interface Props {
@@ -20,9 +19,6 @@ interface Emits {
 }
 const props = defineProps<Props>();
 const emits = defineEmits<Emits>();
-
 </script>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

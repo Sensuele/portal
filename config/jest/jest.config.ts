@@ -16,25 +16,11 @@ export default {
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
   testEnvironment: 'jsdom',
-  coveragePathIgnorePatterns: [
-      '\\\\node_modules\\\\',
-  ],
-  moduleFileExtensions: [
-      'js',
-      'jsx',
-      'ts',
-      'tsx',
-      'json',
-      'node',
-      'vue'
-  ],
-  moduleDirectories: [
-      'node_modules',
-  ],
-  testMatch: [
-      '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-  ],
-  rootDir: '../../',
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
+  moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node', 'vue'],
+  moduleDirectories: ['node_modules'],
+  testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
+  rootDir: '../../'
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 

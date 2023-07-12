@@ -70,8 +70,8 @@ function pluralCustomRule(choice: number, choicesLength: number) {
 }
 
 export const i18n = setupI18n({
-    legacy: false,
-    locale: SUPPORTED_LOCALES.includes(navigator.language) ? navigator.language : 'en',
-    pluralRules: { ru: pluralCustomRule },
-    fallbackLocale: 'en'
-  });
+  legacy: false,
+  locale: SUPPORTED_LOCALES.includes(navigator.language) ? navigator.language : 'en',
+  pluralRules: { ru: pluralCustomRule },
+  fallbackLocale: 'en'
+});

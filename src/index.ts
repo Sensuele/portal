@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
-import App from './app/App.vue'
+import { createApp } from 'vue';
+import App from './app/App.vue';
 import './app/styles/app.scss';
 import router from 'shared/config/routeConfig';
 import { i18n } from 'shared/config/i18n';
