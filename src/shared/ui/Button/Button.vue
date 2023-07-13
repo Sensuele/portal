@@ -1,5 +1,5 @@
 <template>
-  <button v-bind="$attrs" :class="[theme, 'button']">
+  <button v-bind="$attrs" :class="[theme, size, 'button']">
     <span>
       <slot name="default" />
     </span>
@@ -8,10 +8,11 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue';
-import { ThemeButton } from './types';
+import { ButtonSize, ThemeButton } from './types';
 
 export interface Props {
   theme?: ThemeButton;
+  size?: ButtonSize;
 }
 
 const props = defineProps<Props>();
@@ -45,5 +46,17 @@ const props = defineProps<Props>();
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.size_m {
+    font: var(--font-m);
+}
+
+.size_l {
+    font: var(--font-l);
+}
+
+.size_xl {
+    font: var(--font-xl);
 }
 </style>
