@@ -36,4 +36,14 @@ const props = defineProps<Props>();
   border-radius: 10px;
   background: none;
 }
+
+.background {
+  background: var(--bg-color-light);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
