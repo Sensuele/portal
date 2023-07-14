@@ -1,6 +1,6 @@
 <template>
   <div>
-    <btn @click="toggleLang" :theme="ThemeButton.CLEAR">{{ __('Language') }}</btn>
+    <btn @click="toggleLang" :theme="ThemeButton.CLEAR">{{ short ? __('Lang') : __('Language') }}</btn>
   </div>
 </template>
 
@@ -11,6 +11,13 @@ import { defineProps } from 'vue';
 import Btn from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
 import useTranslate from 'shared/config/i18n/useTranslate';
+
+export interface Props {
+  theme?: ThemeButton;
+  short?: boolean;
+}
+
+const props = defineProps<Props>();
 
 const { __ } = useTranslate('LangSwitcher');
 

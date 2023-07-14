@@ -1,9 +1,23 @@
 <template>
   <div class="sidebar-wrap">
     <div  :class="[{collapsed}, 'sidebar']">
+      <ul class="sidebar-routes">
+        <li>
+          <app-link :to="'/'">
+            <icon v-if="collapsed" :icon-name="'Main'" />
+            <span v-else>{{ __('Home') }}</span>
+          </app-link>
+        </li>
+        <li>
+          <app-link :to="'/about'">
+            <icon v-if="collapsed" :icon-name="'AboutIcon'" />
+            <span v-else>{{ __('About') }}</span>
+          </app-link>
+        </li>
+      </ul>
       <div class="switchers">
         <theme-switcher @toggle-theme="emits('toggleTheme')" :theme="theme" />
-        <lang-switcher :class="'lang-switcher'" />
+        <lang-switcher :class="'lang-switcher'" :short="collapsed" />
       </div>
     </div>
     <Button @click="collapsed = !collapsed" :theme="ThemeButton.BACKGROUND" class="sidebar-btn">{{ collapsed ? '>' : '<' }}</Button>
@@ -11,14 +25,16 @@
 </template>
 
 <script setup lang="ts">
-import { Transition, ref } from 'vue';
+import { ref } from 'vue';
 import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
 import Button from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
+import AppLink from 'shared/ui/AppLink';
+import useTranslate from 'shared/config/i18n/useTranslate';
+import Icon from 'shared/assets/Icon/Icon.vue';
 
 interface Props {
-  // className?: string;
   theme: string;
 }
 
@@ -28,6 +44,8 @@ interface Emits {
 
 const props = defineProps<Props>();
 const emits = defineEmits<Emits>();
+
+const { __ } = useTranslate('Navbar');
 
 const collapsed = ref(false);
 </script>
@@ -49,6 +67,22 @@ const collapsed = ref(false);
   &-btn {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+  }
+
+  &-routes {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      margin-top: 10px;
+    }
+
+    a {
+      margin-left: 0;
+    }
   }
 }
 
