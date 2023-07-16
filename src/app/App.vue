@@ -1,18 +1,19 @@
 <template>
-  <div :class="['app', theme]">
+  <div :class="['app', themeStore.theme]">
     <navbar />
     <div class="content-page">
-      <sidebar @toggle-theme="toggleTheme" :theme="theme" />
+      <sidebar />
       <router-view class="page-wrapper" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { useTheme } from 'shared/config/theme/useTheme';
 import Navbar from 'widgets/Navbar';
 import Sidebar from 'widgets/Sidebar';
-const { theme, toggleTheme } = useTheme();
+import { useThemeStore } from 'shared/store/utilsStore';
+
+const themeStore = useThemeStore();
 </script>
 <style lang="scss">
 .dark {

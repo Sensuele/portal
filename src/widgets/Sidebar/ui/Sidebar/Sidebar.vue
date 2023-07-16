@@ -1,6 +1,9 @@
 <template>
   <div class="sidebar-wrap">
-    <div  :class="[{collapsed}, 'sidebar']">
+    <div :class="[{ collapsed }, 'sidebar']">
+      <button @click="visible = !visible">open</button>
+      <modal v-model:visible="visible"></modal>
+
       <ul class="sidebar-routes">
         <li>
           <app-link :to="'/'">
@@ -16,11 +19,13 @@
         </li>
       </ul>
       <div class="switchers">
-        <theme-switcher @toggle-theme="emits('toggleTheme')" :theme="theme" />
+        <theme-switcher />
         <lang-switcher :class="'lang-switcher'" :short="collapsed" />
       </div>
     </div>
-    <Button @click="collapsed = !collapsed" :theme="ThemeButton.BACKGROUND" class="sidebar-btn">{{ collapsed ? '>' : '<' }}</Button>
+    <Button @click="collapsed = !collapsed" :theme="ThemeButton.BACKGROUND" class="sidebar-btn">{{
+      collapsed ? '>' : '<'
+    }}</Button>
   </div>
 </template>
 
@@ -33,21 +38,12 @@ import { ThemeButton } from 'shared/ui/Button/types';
 import AppLink from 'shared/ui/AppLink';
 import useTranslate from 'shared/config/i18n/useTranslate';
 import Icon from 'shared/assets/Icon/Icon.vue';
+import Modal from 'shared/ui/Modal/Modal.vue';
 
-interface Props {
-  theme: string;
-}
-
-interface Emits {
-  (e: 'toggleTheme'): void;
-}
-
-const props = defineProps<Props>();
-const emits = defineEmits<Emits>();
-
-const { __ } = useTranslate('Navbar');
+const { __ } = useTranslate('Sidebar');
 
 const collapsed = ref(false);
+const visible = ref(false)
 </script>
 
 <style scoped lang="scss">
@@ -90,19 +86,19 @@ const collapsed = ref(false);
   width: var(--sidebar-width-collapsed);
 
   .switchers {
-        flex-direction: column;
-        align-items: center;
-    }
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .lang-switcher {
-        margin-left: 0;
-    }
+  .lang-switcher {
+    margin-left: 0;
+  }
 
-    .link {
-        opacity: 0;
-        transition: 0.2s opacity;
-        width: 0;
-    }
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
 }
 
 .switchers {

@@ -4,6 +4,7 @@ import { i18n } from '../src/shared/config/i18n';
 import { setup  } from '@storybook/vue3';
 import { createRouter, createWebHashHistory } from 'vue-router/dist/vue-router';
 import { routes } from '../src/shared/config/routeConfig';
+import { createPinia } from 'pinia';
 
 const router = createRouter({
   history: createWebHashHistory('/iframe.html?id=modules-crm--base#'),
@@ -13,6 +14,7 @@ const router = createRouter({
 setup((app) => {
   app.use(i18n);
   app.use(router);
+  app.use(createPinia());
 })
 
 
