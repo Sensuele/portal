@@ -10,7 +10,7 @@ export default {
     appTheme: {
       control: 'radio',
       options: ['dark', 'light'],
-      table: { defaultValue:  { summary: 'light' } },
+      table: { defaultValue: { summary: 'light' } }
     },
     size: {
       control: 'radio',

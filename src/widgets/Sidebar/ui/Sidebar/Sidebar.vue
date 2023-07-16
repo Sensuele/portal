@@ -43,7 +43,7 @@ import Modal from 'shared/ui/Modal/Modal.vue';
 const { __ } = useTranslate('Sidebar');
 
 const collapsed = ref(false);
-const visible = ref(false)
+const visible = ref(false);
 </script>
 
 <style scoped lang="scss">

@@ -20,15 +20,17 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     new webpack.DefinePlugin({
       __VUE_OPTIONS_API__: false,
       __VUE_PROD_DEVTOOLS__: false
-    }),
-  ]
+    })
+  ];
 
-    if(isDev) {
-      plugins.push(new webpack.HotModuleReplacementPlugin());
-      plugins.push(new BundleAnalyzerPlugin({
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new BundleAnalyzerPlugin({
         openAnalyzer: false
-      }))
-    }
+      })
+    );
+  }
 
   return plugins;
 }
