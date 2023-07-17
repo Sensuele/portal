@@ -1,9 +1,6 @@
 <template>
   <div class="sidebar-wrap">
     <div :class="[{ collapsed }, 'sidebar']">
-      <button @click="visible = !visible">open</button>
-      <modal v-model:visible="visible"></modal>
-
       <ul class="sidebar-routes">
         <li>
           <app-link :to="'/'">
@@ -38,12 +35,10 @@ import { ThemeButton } from 'shared/ui/Button/types';
 import AppLink from 'shared/ui/AppLink';
 import useTranslate from 'shared/config/i18n/useTranslate';
 import Icon from 'shared/assets/Icon/Icon.vue';
-import Modal from 'shared/ui/Modal/Modal.vue';
 
 const { __ } = useTranslate('Sidebar');
 
 const collapsed = ref(false);
-const visible = ref(false);
 </script>
 
 <style scoped lang="scss">

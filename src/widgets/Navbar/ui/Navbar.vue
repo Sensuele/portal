@@ -1,21 +1,16 @@
 <template>
-  <div :class="classNames('navbar', {}, [className ?? ''])">
-    <ul>
-      <li>
-        <app-link :to="'/'">{{ __('Home') }}</app-link>
-      </li>
-      <li>
-        <app-link :to="'/about'">{{ __('About') }}</app-link>
-      </li>
-    </ul>
+  <div :class="'navbar'">
+    <btn @click="visible = !visible" :theme="ThemeButton.CLEAR">{{ __('Login') }}</btn>
+    <modal v-model:visible="visible"></modal>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
-import { classNames } from 'shared/lib/classNames/classNames';
-import AppLink from 'shared/ui/AppLink';
+import { defineProps, ref } from 'vue';
 import useTranslate from 'shared/config/i18n/useTranslate';
+import Modal from 'shared/ui/Modal/Modal.vue';
+import Btn from 'shared/ui/Button/Button.vue';
+import { ThemeButton } from 'shared/ui/Button/types';
 
 interface Props {
   className?: string;
@@ -23,6 +18,8 @@ interface Props {
 
 const { __ } = useTranslate('Navbar');
 const props = defineProps<Props>();
+
+const visible = ref(false);
 </script>
 
 <style lang="scss" scoped>
