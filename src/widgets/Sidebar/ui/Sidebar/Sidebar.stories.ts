@@ -8,7 +8,7 @@ export default {
   argTypes: {
     theme: {
       control: 'radio',
-      options: ['dark', 'light']
+      options: ['dark_theme', 'light_theme']
     }
   },
   parameters: {
@@ -36,5 +36,5 @@ const Template: StoryFn<typeof Sidebar> = (args: any) => ({
 
 export const Base = Template.bind({});
 Base.args = {
-  theme: 'dark'
+  theme: 'dark_theme'
 };

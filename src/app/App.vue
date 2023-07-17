@@ -16,7 +16,7 @@ import { useThemeStore } from 'shared/store/utilsStore';
 const themeStore = useThemeStore();
 </script>
 <style lang="scss">
-.dark {
+.dark_theme {
   .switcher {
     color: yellow;
   }

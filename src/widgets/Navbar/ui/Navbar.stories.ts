@@ -8,7 +8,7 @@ export default {
   argTypes: {
     appTheme: {
       control: 'radio',
-      options: ['dark', 'light']
+      options: ['dark_theme', 'light_theme']
     }
   },
   parameters: {

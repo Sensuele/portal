@@ -9,8 +9,8 @@ export default {
   argTypes: {
     appTheme: {
       control: 'radio',
-      options: ['dark', 'light'],
-      table: { defaultValue: { summary: 'light' } }
+      options: ['dark_theme', 'light_theme'],
+      table: { defaultValue: { summary: 'light_theme' } }
     },
     size: {
       control: 'radio',
@@ -31,7 +31,7 @@ const Template: StoryFn<typeof Button> = (args) => ({
   setup() {
     return { args };
   },
-  template: `<div :class="args.appTheme ? args.appTheme : 'dark'" class="app" style="margin: 0 auto; padding: 40px 0"><Button v-bind="args" @click="action"><span>Button label</span></Button></div>`
+  template: `<div :class="args.appTheme ? args.appTheme : 'dark_theme'" class="app" style="margin: 0 auto; padding: 40px 0"><Button v-bind="args" @click="action"><span>Button label</span></Button></div>`
 });
 
 export const Clear = Template.bind({});

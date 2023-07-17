@@ -9,7 +9,7 @@ export default {
   argTypes: {
     theme: {
       control: 'radio',
-      options: ['dark', 'light']
+      options: ['dark_theme', 'light_theme']
     }
   },
   parameters: {

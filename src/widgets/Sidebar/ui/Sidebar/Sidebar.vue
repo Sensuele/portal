@@ -7,7 +7,7 @@
       <ul class="sidebar-routes">
         <li>
           <app-link :to="'/'">
-            <icon v-if="collapsed" :icon-name="'Main'" />
+            <icon v-if="collapsed" :icon-name="'MainIcon'" />
             <span v-else>{{ __('Home') }}</span>
           </app-link>
         </li>

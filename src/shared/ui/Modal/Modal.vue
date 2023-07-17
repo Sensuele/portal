@@ -73,7 +73,7 @@ watch(
   margin-bottom: 1.2em;
   transition: background-color 0.5s ease;
 
-  &.dark {
+  &.dark_theme {
     background: var(--bg-color-light);
     color: var(--primary-color);
   }
