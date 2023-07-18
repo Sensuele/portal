@@ -13,7 +13,6 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "storybook dev -p 6006",
     "storybook:build": "storybook build"
   },
@@ -73,8 +72,6 @@
     "json-server": "^0.17.3",
     "loki": "^0.32.0",
     "mini-css-extract-plugin": "^2.7.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
     "storybook": "^7.0.26",
@@ -97,7 +94,7 @@
     "@vueuse/components": "^10.2.1",
     "@vueuse/core": "^10.2.1",
     "pinia": "^2.1.4",
-    "vue": "^3.2.36",
+    "vue": "^3.3.4",
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.2"
   },

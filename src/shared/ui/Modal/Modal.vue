@@ -1,7 +1,7 @@
 <template>
   <div>
     <teleport :to="to">
-      <div :class="['modal', themeStore.theme]" v-if="innerVisible">
+      <div :class="['modal', themeStore.theme, classNames('', {}, [className ?? ''])]" v-if="innerVisible">
         <div>
           <div class="modal__header">
             <slot name="header"></slot>
@@ -11,8 +11,8 @@
           </div>
           <div class="modal__footer">
             <slot name="footer">
-              <button class="modal-default-button" @click="onVisibleChanged">Cancel</button>
-              <button class="modal-default-button">OK</button>
+              <!-- <button class="modal-default-button" @click="onVisibleChanged">Cancel</button>
+              <button class="modal-default-button">OK</button> -->
             </slot>
           </div>
         </div>
@@ -23,7 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref, defineEmits, watch } from 'vue';
+import { ref, watch } from 'vue';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 import { useThemeStore } from 'shared/store/utilsStore';
 
@@ -32,6 +33,7 @@ const themeStore = useThemeStore();
 interface Props {
   visible: boolean;
   to?: string;
+  className?: string;
 }
 
 interface Emits {
@@ -62,11 +64,11 @@ watch(
   top: 20%;
   left: 50%;
   transform: translateX(-50%);
-  min-height: 200px;
+  min-height: 100px;
   background-color: white;
   display: table;
   transition: opacity 0.3s ease;
-  width: 600px;
+  width: 480px;
   padding: 22px 24px;
   border-radius: 8px;
   box-shadow: var(--vt-shadow-2);

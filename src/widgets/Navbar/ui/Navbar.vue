@@ -1,16 +1,16 @@
 <template>
   <div :class="'navbar'">
     <btn @click="visible = !visible" :theme="ThemeButton.CLEAR">{{ __('Login') }}</btn>
-    <modal v-model:visible="visible"></modal>
+    <login-modal v-model:visible="visible"></login-modal>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { ref } from 'vue';
 import useTranslate from 'shared/config/i18n/useTranslate';
-import Modal from 'shared/ui/Modal/Modal.vue';
 import Btn from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
+import { LoginModal } from 'features/AuthByUserName';
 
 interface Props {
   className?: string;

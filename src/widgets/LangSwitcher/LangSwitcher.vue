@@ -7,7 +7,6 @@
 <script setup lang="ts">
 import { i18n } from 'shared/config/i18n';
 import { Composer } from 'vue-i18n';
-import { defineProps } from 'vue';
 import Btn from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
 import useTranslate from 'shared/config/i18n/useTranslate';

@@ -8,7 +8,6 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
-import { defineProps } from 'vue';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { RouteLocationRaw } from 'vue-router';
 
