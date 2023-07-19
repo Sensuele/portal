@@ -3,7 +3,7 @@
     <modal v-model:visible="innerVisible" :class-name="'login-modal'">
       <template #body>
         <div>
-          <login-form />
+          <login-form @logged-in="onLoggedIn" :loading="loading" />
         </div>
       </template>
     </modal>
@@ -14,20 +14,27 @@
 import { ref, watch } from 'vue';
 import Modal from 'shared/ui/Modal/Modal.vue';
 import LoginForm from '../LoginForm/LoginForm.vue';
+import { LoginSchema } from '../../model/types/loginSchema';
 
 interface Props {
   visible: boolean;
   to?: string;
+  loading?: boolean;
 }
 
 interface Emits {
   (e: 'update:visible', value: boolean): void;
+  (e: 'loggedIn', values): void;
 }
 
 const props = defineProps<Props>();
-const emit = defineEmits<Emits>();
+const emits = defineEmits<Emits>();
 
 const innerVisible = ref(false);
+
+const onLoggedIn = (values: LoginSchema) => {
+  emits('loggedIn', values);
+};
 
 watch(
   () => props.visible,
@@ -36,7 +43,7 @@ watch(
 );
 
 watch(innerVisible, () => {
-  emit('update:visible', innerVisible.value);
+  emits('update:visible', innerVisible.value);
 });
 </script>
 
@@ -44,7 +51,6 @@ watch(innerVisible, () => {
 :deep {
   .login-modal {
     width: 400px;
-
   }
 }
 </style>

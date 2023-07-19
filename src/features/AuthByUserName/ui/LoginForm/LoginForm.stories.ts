@@ -1,5 +1,4 @@
 import LoginForm from './LoginForm.vue';
-import { ref } from 'vue';
 
 export default {
   title: 'features/LoginForm',

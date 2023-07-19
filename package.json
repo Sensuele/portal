@@ -93,6 +93,8 @@
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vueuse/components": "^10.2.1",
     "@vueuse/core": "^10.2.1",
+    "axios": "^1.4.0",
+    "http-status-codes": "^2.2.0",
     "pinia": "^2.1.4",
     "vue": "^3.3.4",
     "vue-i18n": "^9.2.2",

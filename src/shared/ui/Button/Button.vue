@@ -20,6 +20,11 @@ const props = defineProps<Props>();
 <style scoped lang="scss">
 .button {
   cursor: pointer;
+
+  &[disabled] {
+    border: 1px solid #999999;
+    color: #666666;
+  }
 }
 .clear {
   padding: 0;

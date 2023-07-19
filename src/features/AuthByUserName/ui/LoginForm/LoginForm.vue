@@ -8,7 +8,9 @@
       <base-input v-model:modelValue="formState.password" />
       <label>Password</label>
     </div>
-    <btn :theme="ThemeButton.OUTLINE" class="login-btn">{{ __('Login') }}</btn>
+    {{ appStore.error }}
+
+    <btn @click="handleSubmit" :theme="ThemeButton.OUTLINE" :disabled="loading" class="login-btn">{{ __('Login') }}</btn>
   </div>
 </template>
 
@@ -18,13 +20,33 @@ import Btn from 'shared/ui/Button/Button.vue';
 import useTranslate from 'shared/config/i18n/useTranslate';
 import { ThemeButton } from 'shared/ui/Button/types';
 import BaseInput from 'shared/ui/Input/Input.vue';
+import { useAppStore } from 'app/appStore/store';
 
 const { __ } = useTranslate('Navbar');
+const appStore = useAppStore();
+
+interface Props {
+  loading?: boolean;
+}
+
+interface Emits {
+  (e: 'loggedIn', values): void;
+}
+
+defineProps<Props>();
+const emits = defineEmits<Emits>();
 
 const formState = reactive({
   username: '',
   password: ''
 });
+
+const handleSubmit = async () => {
+  emits('loggedIn', {
+    username: formState.username.trim(),
+    password: formState.password
+  });
+};
 </script>
 
 <style scoped lang="scss">
