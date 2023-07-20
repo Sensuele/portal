@@ -1,6 +1,6 @@
 <template>
   <div :class="'navbar'">
-    <btn v-if="appStore.authorized" @click="appStore.reset">{{ __('Logout') }}</btn>
+    <btn v-if="appStore.authorized" @click="appStore.reset" :theme="ThemeButton.CLEAR">{{ __('Logout') }}</btn>
     <btn v-else @click="visible = !visible" :theme="ThemeButton.CLEAR">{{ __('Login') }}</btn>
     <login-modal v-model:visible="visible" @logged-in="onLoggedIn" :loading="loading"></login-modal>
   </div>
@@ -15,7 +15,6 @@ import { useLogin } from 'features/AuthByUserName/model/slice/useLogin';
 import { LoginSchema } from 'features/AuthByUserName/model/types/loginSchema';
 import { useAppStore } from 'app/appStore/store';
 import { LoginModal } from 'features/AuthByUserName';
-import httpCodes from 'http-status-codes';
 
 interface Props {
   className?: string;

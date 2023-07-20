@@ -8,9 +8,11 @@
       <base-input v-model:modelValue="formState.password" />
       <label>Password</label>
     </div>
-    {{ appStore.error }}
+    <base-text :text="appStore.error" :theme="TextTheme.ERROR" />
 
-    <btn @click="handleSubmit" :theme="ThemeButton.OUTLINE" :disabled="loading" class="login-btn">{{ __('Login') }}</btn>
+    <btn @click="handleSubmit" :theme="ThemeButton.OUTLINE" :disabled="loading" class="login-btn">{{
+      __('Login')
+    }}</btn>
   </div>
 </template>
 
@@ -20,6 +22,8 @@ import Btn from 'shared/ui/Button/Button.vue';
 import useTranslate from 'shared/config/i18n/useTranslate';
 import { ThemeButton } from 'shared/ui/Button/types';
 import BaseInput from 'shared/ui/Input/Input.vue';
+import BaseText from 'shared/ui/Text/Text.vue';
+import { TextTheme } from 'shared/ui/Text/TextTypes';
 import { useAppStore } from 'app/appStore/store';
 
 const { __ } = useTranslate('Navbar');
