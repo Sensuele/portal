@@ -40,7 +40,9 @@ const onLoggedIn = async (formState: LoginSchema) => {
     appStore.error = '';
   } catch (error) {
     if (error instanceof Error && error.message === 'Request failed with status code 403') {
-      appStore.error = 'Wrong username or password';
+      appStore.error = 'Incorrect username or password';
+    } else {
+      appStore.error = 'Something goes wrong';
     }
     console.log(error);
   } finally {
