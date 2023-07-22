@@ -16,8 +16,8 @@ npm run start:dev - запуск сервера + frontend проекта в dev
 - `npm run build:dev` - Сборка в dev режиме (не минимизирован)
 - `npm run lint:ts` - Проверка ts файлов линтером
 - `npm run lint:ts:fix` - Исправление ts файлов линтером
-- `npm run test:unit` - Хапуск unit тестов с jest
-- `npm run test:ui` - Хапуск скриншотных тестов с loki
+- `npm run test:unit` - Запуск unit тестов с jest
+- `npm run test:ui` - Запуск скриншотных тестов с loki
 - `npm run storybook` - запуск Storybook
 - `npm run storybook:build` - Сборка storybook билда
 
