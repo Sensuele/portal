@@ -1,5 +1,6 @@
 import Text from './Text.vue';
 import { TextTheme } from './TextTypes';
+import { Meta, StoryFn } from '@storybook/vue3';
 
 export default {
   title: 'shared/Text',
@@ -19,9 +20,9 @@ export default {
     // More on Story layout: https://storybook.js.org/docs/vue/configure/story-layout
     layout: 'fullscreen'
   }
-};
+} as Meta<typeof Text>;
 
-const Template = (args: any) => ({
+const Template: StoryFn<typeof Text> = (args) => ({
   // Components used in your story `template` are defined in the `components` object
   components: { Text },
 
@@ -36,8 +37,9 @@ const Template = (args: any) => ({
 });
 
 export const Primary = Template.bind({});
+export const Outline = Template.bind({});
 
 Primary.args = {
   title: 'Title lorem',
-  text: 'Description text',
+  text: 'Description text'
 };
