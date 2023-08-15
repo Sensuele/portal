@@ -3,6 +3,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 export const routes: Array<RouteRecordRaw> = [
   { name: 'Home', path: '/', component: () => import('pages/MainPage') },
   { name: 'About', path: '/about', component: () => import('pages/About.vue') },
+  { name: 'Profile', path: '/profile', component: () => import('pages/ProfilePage') },
   {
     name: 'NotFound',
     path: '/:pathMatch(.*)*',

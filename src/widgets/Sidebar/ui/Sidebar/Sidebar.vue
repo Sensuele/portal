@@ -14,6 +14,12 @@
             <span v-else>{{ __('About') }}</span>
           </app-link>
         </li>
+        <li>
+          <app-link :to="'/profile'">
+            <icon v-if="collapsed" :icon-name="'AboutIcon'" />
+            <span v-else>{{ __('Profile') }}</span>
+          </app-link>
+        </li>
       </ul>
       <div class="switchers">
         <theme-switcher />

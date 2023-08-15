@@ -1,27 +1,19 @@
 <template>
-  <input
-    v-bind="$attrs"
-    ref="inputRef"
-    type="text"
-    :value="modelValue"
-    @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-  />
+  <input v-bind="$attrs" ref="inputRef" type="text" v-model="modelValue" />
 </template>
 
 <script setup lang="ts">
 import { InputHTMLAttributes, ref } from 'vue';
 
-export interface Props {
-  modelValue: string;
-}
+export interface Props {}
 
 defineProps<Props>();
 const inputRef = ref();
 const focus = () => {
   inputRef.value?.focus();
 };
-defineEmits(['update:value']);
 defineExpose({ inputRef, focus });
+// const modelValue = defineModel<string>();
 </script>
 
 <style lang="scss">

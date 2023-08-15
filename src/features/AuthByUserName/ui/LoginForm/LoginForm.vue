@@ -1,11 +1,11 @@
 <template>
   <div class="login-form">
     <div class="input-container">
-      <base-input v-model:modelValue="formState.username" />
+      <base-input v-model="formState.username" />
       <label>Login</label>
     </div>
     <div class="input-container">
-      <base-input v-model:modelValue="formState.password" />
+      <base-input v-model="formState.password" />
       <label>Password</label>
     </div>
     <base-text :text="appStore.error" :theme="TextTheme.ERROR" />

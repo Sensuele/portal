@@ -25,6 +25,11 @@
         "password": "123"
       }
     ],
-    "profile": { "name": "typicode" }
-  }
+    "profile": { 
+      "firstName": "Eugene" ,
+      "lastName": "Druzh",
+      "age": 29,
+      "country": "Russia"
+    }
+}
   

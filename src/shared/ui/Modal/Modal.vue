@@ -29,7 +29,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useThemeStore } from 'shared/store/utilsStore';
 
 const themeStore = useThemeStore();
-
 interface Props {
   visible: boolean;
   to?: string;

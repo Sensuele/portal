@@ -1,4 +1,6 @@
 export default {
   Home: 'Главная',
-  About: 'О проекте'
+  About: 'О проекте',
+  Profile: 'Профиль'
+
 };

@@ -1,4 +1,5 @@
 export default {
   Home: 'Home',
-  About: 'About'
+  About: 'About',
+  Profile: 'Profile'
 };
