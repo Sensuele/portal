@@ -1,11 +1,13 @@
 <template>
-  <input v-bind="$attrs" ref="inputRef" type="text" v-model="modelValue" />
+  <input v-bind="$attrs" ref="inputRef" type="text" :value="modelValue" />
 </template>
 
 <script setup lang="ts">
 import { InputHTMLAttributes, ref } from 'vue';
 
-export interface Props {}
+export interface Props {
+  modelValue: string;
+}
 
 defineProps<Props>();
 const inputRef = ref();
@@ -13,7 +15,6 @@ const focus = () => {
   inputRef.value?.focus();
 };
 defineExpose({ inputRef, focus });
-// const modelValue = defineModel<string>();
 </script>
 
 <style lang="scss">

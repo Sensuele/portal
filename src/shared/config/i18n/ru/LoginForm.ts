@@ -1,3 +1,5 @@
 export default {
-  Login: 'Войти'
+  Login: 'Логин',
+  'Login-in': 'Войти',
+  Password: 'Пароль'
 };

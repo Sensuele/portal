@@ -2,16 +2,16 @@
   <div class="login-form">
     <div class="input-container">
       <base-input v-model="formState.username" />
-      <label>Login</label>
+      <label>{{ __('Login') }}</label>
     </div>
     <div class="input-container">
       <base-input v-model="formState.password" />
-      <label>Password</label>
+      <label>{{ __('Password') }}</label>
     </div>
     <base-text :text="appStore.error" :theme="TextTheme.ERROR" />
 
     <btn @click="handleSubmit" :theme="ThemeButton.OUTLINE" :disabled="loading" class="login-btn">{{
-      __('Login')
+      __('Login-in')
     }}</btn>
   </div>
 </template>
@@ -26,7 +26,7 @@ import BaseText from 'shared/ui/Text/Text.vue';
 import { TextTheme } from 'shared/ui/Text/TextTypes';
 import { useAppStore } from 'app/appStore/store';
 
-const { __ } = useTranslate('Navbar');
+const { __ } = useTranslate('LoginForm');
 const appStore = useAppStore();
 
 interface Props {

@@ -78,12 +78,6 @@ const collapsed = ref(false);
   .lang-switcher {
     margin-left: 0;
   }
-
-  .link {
-    opacity: 0;
-    transition: 0.2s opacity;
-    width: 0;
-  }
 }
 
 .switchers {

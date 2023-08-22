@@ -18,4 +18,14 @@ defineProps<Props>();
 
 const { __ } = useTranslate('Sidebar');
 </script>
-<style scoped></style>
+<style scoped lang="scss">
+.collapsed {
+  width: var(--sidebar-width-collapsed);
+
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+}
+</style>
