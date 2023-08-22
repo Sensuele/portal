@@ -2,23 +2,8 @@
   <div class="sidebar-wrap">
     <div :class="[{ collapsed }, 'sidebar']">
       <ul class="sidebar-routes">
-        <li>
-          <app-link :to="'/'">
-            <icon v-if="collapsed" :icon-name="'MainIcon'" />
-            <span v-else>{{ __('Home') }}</span>
-          </app-link>
-        </li>
-        <li>
-          <app-link :to="'/about'">
-            <icon v-if="collapsed" :icon-name="'AboutIcon'" />
-            <span v-else>{{ __('About') }}</span>
-          </app-link>
-        </li>
-        <li>
-          <app-link :to="'/profile'">
-            <icon v-if="collapsed" :icon-name="'AboutIcon'" />
-            <span v-else>{{ __('Profile') }}</span>
-          </app-link>
+        <li v-for="link in SidebarItemsList" :key="link.path">
+          <sidebar-item v-bind="link" :collapsed="collapsed" />
         </li>
       </ul>
       <div class="switchers">
@@ -38,12 +23,11 @@ import ThemeSwitcher from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher';
 import Button from 'shared/ui/Button/Button.vue';
 import { ThemeButton } from 'shared/ui/Button/types';
-import AppLink from 'shared/ui/AppLink';
 import useTranslate from 'shared/config/i18n/useTranslate';
-import Icon from 'shared/assets/Icon/Icon.vue';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import SidebarItem from './SidebarItem/SidebarItem.vue';
 
 const { __ } = useTranslate('Sidebar');
-
 const collapsed = ref(false);
 </script>
 

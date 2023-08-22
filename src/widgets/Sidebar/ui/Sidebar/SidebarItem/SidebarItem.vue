@@ -1,0 +1,21 @@
+<template>
+  <app-link :to="path">
+    <icon v-if="collapsed" :icon-name="iconName" />
+    <span v-else>{{ __(text) }}</span>
+  </app-link>
+</template>
+
+<script setup lang="ts">
+import { SidebarItemType } from 'widgets/Sidebar/model/items';
+import useTranslate from 'shared/config/i18n/useTranslate';
+import Icon from 'shared/assets/Icon/Icon.vue';
+import AppLink from 'shared/ui/AppLink';
+
+interface Props extends SidebarItemType {
+  collapsed: boolean;
+}
+defineProps<Props>();
+
+const { __ } = useTranslate('Sidebar');
+</script>
+<style scoped></style>
